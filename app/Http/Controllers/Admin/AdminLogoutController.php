@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class AdminLogoutController extends Controller
+{
+    function logout(Request $request)
+    {
+        $request->session()->forget('admin_auth');
+        return redirect()->route('admin.index');
+    }
+}
