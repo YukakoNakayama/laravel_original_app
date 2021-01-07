@@ -18,10 +18,9 @@ class UsersTableSeeder extends Seeder
         $stores = ['新宿','銀座','横浜'];
 
         foreach($stores as $store) {
-            DB::table('users')->insert([
+            DB::table('stores')->insert([
                 'store_name' => $store,
                 'password' => bcrypt('test'),
-                'adminflag' => '0',
                 'delflag' => '0',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
